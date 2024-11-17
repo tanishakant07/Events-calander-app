@@ -2,14 +2,18 @@
   "name": "events-calender-app",
   "version": "1.0.0",
   "description": "events-calender-app",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "src": "nodemon src/index.js"
   },
   "keywords": [
     "typescript",
     "fullstack"
   ],
   "author": "Tanisha Kant",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
 }
