@@ -1,0 +1,27 @@
+/* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set the root element to full height */
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #eef2f5;
+  color: #333;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,63 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4; /* Light gray background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  background: #fff; /* White background for the card */
+  padding: 30px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  text-align: center;
+  max-width: 400px;
+  width: 100%; /* Responsive width */
+  margin-top: 50px; /* Adds space at the top */
+  transform: translateY(20%); /* Shift down slightly to better center */
+}
+
+.login-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333; /* Dark text for better readability */
+}
+
+.login-container input {
+  width: 100%; /* Full width for consistency */
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc; /* Soft border for inputs */
+  border-radius: 4px; /* Rounded corners for input fields */
+  font-size: 14px;
+}
+
+.login-container input:focus {
+  outline: none;
+  border-color: #007bff; /* Blue border on focus */
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.2);
+}
+
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background-color: #007bff; /* Primary blue color */
+  color: white;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+  background-color: #0056b3; /* Slightly darker blue on hover */
+}
+
+.login-container button:active {
+  background-color: #004a99; /* Even darker blue on click */
+}

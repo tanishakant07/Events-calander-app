@@ -1,0 +1,120 @@
+/* General Modal Styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Ensure it is above other elements */
+}
+
+/* Modal Content Container */
+.modal-content {
+  background: #ffffff; /* White background for clarity */
+  padding: 30px; /* More padding for a clean look */
+  border-radius: 12px; /* Smooth rounded corners */
+  width: 420px; /* Fixed width for desktop */
+  max-width: 90%; /* Responsive: Adapt width on smaller screens */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Elevated shadow */
+  text-align: center; /* Center text inside */
+}
+
+/* Form Layout */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Add spacing between form elements */
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="datetime-local"],
+select {
+  width: 100%; /* Full width of container */
+  padding: 12px; /* Spacious input area */
+  font-size: 1rem; /* Readable text size */
+  border: 1px solid #ddd; /* Subtle border */
+  border-radius: 6px; /* Rounded corners */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05); /* Light inset shadow */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+  background: white; /* Ensure background is white */
+  appearance: none; /* Remove default select arrow for custom styling */
+}
+
+input[type="text"]:focus,
+input[type="datetime-local"]:focus,
+select:focus {
+  border-color: #007bff; /* Highlighted border color on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); /* Glow effect */
+  outline: none; /* Remove default outline */
+}
+
+/* Add a down arrow for select dropdown */
+select {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23777' d='M2 0L0 2h4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px;
+  padding-right: 30px; /* Space for the arrow */
+}
+
+/* Form Buttons */
+button {
+  padding: 10px 15px; /* Add padding for click area */
+  font-size: 1rem; /* Standard font size */
+  border: none; /* Remove border */
+  border-radius: 6px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor for better UX */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth interactions */
+}
+
+button:hover {
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+button:active {
+  transform: translateY(0); /* Reset lift effect */
+}
+
+/* Submit Button */
+.btn-submit {
+  background-color: #007bff; /* Primary blue color */
+  color: white; /* White text */
+}
+
+.btn-submit:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Cancel Button */
+.btn-cancel {
+  background-color: #f8f9fa; /* Light gray background */
+  color: #495057; /* Dark gray text */
+}
+
+.btn-cancel:hover {
+  background-color: #e2e6ea; /* Slightly darker gray */
+}
+
+/* Form Buttons Container */
+.form-buttons {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+  justify-content: center; /* Center align buttons */
+  margin-top: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 20px; /* Reduce padding for smaller screens */
+  }
+
+  form {
+    gap: 10px; /* Reduce gap for compact layout */
+  }
+}
