@@ -20,13 +20,15 @@ const RegistrationPage = () => {
         }
       );
 
-      if(response.data.data.statusCode === 400) {
+      if (response.data.data.statusCode === 400) {
         navigate("/login");
       }
       sessionStorage.setItem("userEmail", email); // Store emaail
-      sessionStorage.setItem("token", response.data.data.accessToken); // Store JWT
+      if (response.data.data.accessToken) {
+        sessionStorage.setItem("token", response.data.data.accessToken);
+      }
       navigate("/dashboard");
-    } catch (error) {      
+    } catch (error) {
       alert("Registration failed!");
     }
   };

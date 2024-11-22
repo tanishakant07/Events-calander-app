@@ -23,7 +23,7 @@ const generateAccessAndRefereshTokens = async (userId) => {
 };
 
 const registerUser = asyncHandler(async (req, res) => {
-  const { fullName, email, username, password } = req.body;
+  const { email, username, password } = req.body;
   if ([email, username, password].some((field) => field?.trim() === "")) {
     throw new ApiError(400, "All fields are required");
   }
@@ -35,18 +35,23 @@ const registerUser = asyncHandler(async (req, res) => {
   if (existedUser) {
     const { accessToken, refreshToken } = await generateAccessAndRefereshTokens(
       existedUser._id
-    );
-
+    );    
+    const userToSend = existedUser.toObject();
+    delete userToSend.password;
+    delete userToSend.refreshToken;
+  
     return res
       .status(200)
+      .cookie("accessToken", accessToken)
+    .cookie("refreshToken", refreshToken)
       .json(
         new ApiResponse(
           400,
-          { ...existedUser, accessToken },
+          { user: existedUser, accessToken },
           "User with email or username already exists"
         )
       );
-  }
+    }  
 
   const user = await User.create({
     email,
@@ -61,10 +66,12 @@ const registerUser = asyncHandler(async (req, res) => {
   if (!createdUser) {
     throw new ApiError(500, "Something went wrong while registering the user");
   }
-
+  const { accessToken, refreshToken } = await generateAccessAndRefereshTokens(
+    createdUser._id
+  );
   return res
     .status(201)
-    .json(new ApiResponse(200, createdUser, "User registered Successfully"));
+    .json(new ApiResponse(200, {createdUser, accessToken, refreshToken}, "User registered Successfully"));
 });
 
 const loginUser = asyncHandler(async (req, res) => {
