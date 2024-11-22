@@ -18,12 +18,11 @@ const Dashboard = () => {
         { withCredentials: true, headers: { Authorization: `Bearer ${token}` } }
       );
 
-      if (!response.ok) {
+      if (response.status !== 200) {
         throw new Error("Failed to fetch events");
       }
 
-      const data = await response.json();
-      setEvents(data.data); // Update state with the fetched events
+      setEvents(response.data.data.events);
     } catch (error) {
       console.error(error);
     }
