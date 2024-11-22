@@ -14,11 +14,7 @@ const LoginPage = () => {
       const username = email.split("@")[0];
       const response = await axios.post(
         `${process.env.REACT_APP_API_URL}/users/login`,
-        {
-          email,
-          password,
-          username,
-        }
+        {email, password, username }
       );
       sessionStorage.setItem("userEmail", email);
       sessionStorage.setItem("token", response.data.data.accessToken); // Store JWT
