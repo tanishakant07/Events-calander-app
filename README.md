@@ -1,6 +1,7 @@
 # Events Calendar App
 
 The **Events Calendar App** is a full-stack application that enables users to create, manage, and view events in a calendar interface. It incorporates robust authentication, seamless event scheduling, and a user-friendly interface.
+[Watch Demo Video](https://drive.google.com/file/d/14ZBUkowaq4zj8t-H5hNUtBCYXpgEWSYX/view?usp=sharing)
 
 ## Features
 
